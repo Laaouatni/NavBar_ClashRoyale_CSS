@@ -57,7 +57,8 @@ body {
     width: 100%;
     padding: 0.2rem;
     background: var(--light-blue);
-    transition-duration: 0.1s;
+    border-radius: 0.2rem;
+    transition: all 0.2s;
 }
 
 

@@ -1,0 +1,23 @@
+/* I copied this font-face, directly from the official website
+
+@font-face {
+    font-family: 'supercell-magicregular';
+    src: url("../fonts/supercell-magic.eot");
+    src: url("../fonts/supercell-magic.eot?#iefix") format("embedded-opentype"), url("../fonts/supercell-magic.woff") format("woff"), url("../fonts/supercell-magic.ttf") format("truetype"), url("../fonts/supercell-magic.svg#supercell-magicregular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+*/
+
+@font-face {
+    font-family: 'supercell-magicregular';
+    src: url("https://clashroyale.com/blog-assets/fonts/supercell-magic.eot");
+    src: url("https://clashroyale.com/blog-assets/fonts/supercell-magic.eot?#iefix") format("embedded-opentype"), url("https://clashroyale.com/blog-assets/fonts/supercell-magic.woff") format("woff"), url("https://clashroyale.com/blog-assets/fonts/supercell-magic.ttf") format("truetype"), url("https://clashroyale.com/blog-assets/fonts/supercell-magic.svg#supercell-magicregular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'supercell-magicregular';
+}

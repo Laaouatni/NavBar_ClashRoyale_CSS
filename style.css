@@ -1,3 +1,10 @@
+* {
+    --light-blue: #196dcf;
+    --lighter-blue: #7db3f1;
+    --height-loading-bar: 1.5rem;
+}
+
+
 /* I copied this font-face, directly from the official website
 
 @font-face {
@@ -20,4 +27,49 @@
 
 body {
     font-family: 'supercell-magic';
+    margin: 0;
+}
+
+
+/* page 1 */
+
+.page1 {
+    background: url('./images/main-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100vw;
+}
+
+.loading {
+    background: black;
+    box-shadow: 0 0 0.2rem 0.2rem black;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+}
+
+.loading-bar {
+    height: var(--height-loading-bar);
+    width: 100vw;
+    padding: 0.2rem;
+    background: var(--light-blue);
+    transform: translatex(-100%);
+    transition-duration: 0.5s;
+}
+
+.loading:hover .loading-bar {
+    transition-duration: 2s;
+    transform: translatex(0);
+}
+
+.loading-bar::before {
+    content: '';
+    display: block;
+    height: calc(var(--height-loading-bar) / 2 + 0.1rem);
+    width: 100%;
+    background: var(--lighter-blue);
+    border-radius: 0.2rem;
 }

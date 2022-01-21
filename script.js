@@ -16,12 +16,12 @@ let LoadingInterval = setInterval(() => {
         if (loading == 100) {
             clearInterval(LoadingInterval);
             loadingNumberContainer.innerHTML = '100%';
-            page1.style.transition = 'all 0.5s';
+            page1.style.transition = 'all 1s';
             page1.style.opacity = 0;
             setTimeout(() => {
                 page1.style.display = 'none';
                 console.log('page1 is hidden');
-            }, 400);
+            }, 900);
         }
     },
     50);

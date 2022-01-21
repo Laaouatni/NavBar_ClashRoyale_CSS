@@ -28,6 +28,7 @@
 body {
     font-family: 'supercell-magic';
     margin: 0;
+    overflow: hidden;
 }
 
 
@@ -46,24 +47,27 @@ body {
 .loading {
     background: black;
     box-shadow: 0 0 0.2rem 0.2rem black;
-    overflow: hidden;
     position: fixed;
     bottom: 0;
+    width: 100vw;
+    display: grid;
+    place-items: center;
 }
 
 .loading-bar {
     height: var(--height-loading-bar);
-    width: 100vw;
+    width: 100%;
     padding: 0.2rem;
     background: var(--light-blue);
-    transform: translatex(-100%);
-    transition-duration: 0.5s;
+    /*     transform: translatex(-100%);
+    transition-duration: 0.5s; */
 }
 
-.loading:hover .loading-bar {
+
+/* .loading:hover .loading-bar {
     transition-duration: 2s;
     transform: translatex(0);
-}
+} */
 
 .loading-bar::before {
     content: '';
@@ -72,4 +76,15 @@ body {
     width: 100%;
     background: var(--lighter-blue);
     border-radius: 0.2rem;
+}
+
+.loading::before {
+    content: "100%";
+    color: white;
+    position: absolute;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    bottom: calc(var(--height-loading-bar) / 2 - 0.1rem);
+    text-shadow: 0 0.2rem 0.1rem black, 0 0 0.5rem black;
 }

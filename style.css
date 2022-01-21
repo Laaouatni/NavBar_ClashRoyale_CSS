@@ -1,7 +1,7 @@
 * {
     --light-blue: #196dcf;
     --lighter-blue: #7db3f1;
-    --height-loading-bar: 1.5rem;
+    --height-loading-bar: 1.5em;
 }
 
 
@@ -46,7 +46,7 @@ body {
 
 .loading {
     background: black;
-    box-shadow: 0 0 0.2rem 0.2rem black;
+    box-shadow: 0 0 0.2em 0.2em black;
     position: fixed;
     bottom: 0;
     width: 100vw;
@@ -57,7 +57,7 @@ body {
 .loading-bar {
     height: var(--height-loading-bar);
     width: 100%;
-    padding: 0.2rem;
+    padding: 0.2em;
     background: var(--light-blue);
     /*     transform: translatex(-100%);
     transition-duration: 0.5s; */
@@ -72,10 +72,10 @@ body {
 .loading-bar::before {
     content: '';
     display: block;
-    height: calc(var(--height-loading-bar) / 2 + 0.1rem);
+    height: calc(var(--height-loading-bar) / 2 + 0.1em);
     width: 100%;
     background: var(--lighter-blue);
-    border-radius: 0.2rem;
+    border-radius: 0.2em;
 }
 
 .loading::before {
@@ -84,7 +84,7 @@ body {
     position: absolute;
     display: grid;
     place-items: center;
-    font-size: 1.5rem;
-    bottom: calc(var(--height-loading-bar) / 2 - 0.1rem);
-    text-shadow: 0 0.2rem 0.1rem black, 0 0 0.5rem black;
+    font-size: 1.5em;
+    bottom: calc(var(--height-loading-bar) / 2 - 0.1em);
+    text-shadow: 0 0.2em 0.1em black, 0 0 0.5em black;
 }

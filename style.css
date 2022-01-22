@@ -136,6 +136,6 @@ body {
         transform: scale(1);
     }
     to {
-        filter: invert(1) drop-shadow(0 0 100vh white);
+        filter: invert(1) drop-shadow(0 0 100vw white);
     }
 }

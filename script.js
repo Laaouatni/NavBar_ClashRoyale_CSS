@@ -1,19 +1,25 @@
-let loadingNumberContainer = document.querySelector('.loading-number');
+// qui dovrai stilizzare con js, l'animazione della barra di caricamento
 let loadingBarContainer = document.querySelector('.loading-bar');
+// qui devrai mettere il codice per la barra di caricamento (in percentuale)
+let loadingNumberContainer = document.querySelector('.loading-number');
+// 0%
+let loadingPercentual = 0;
 
+// 1 pagina della schermata di CARICAMENTO
 let page1 = document.querySelector('.page1');
 
-loadingBarContainer.style.transform = 'translateX(-100%)';
-// create a loading that start at 0 and increment by 1 every 1 second until it reaches 100
-let loading = 0;
-let LoadingInterval = setInterval(() => {
-        loading++;
-        loadingNumberContainer.innerHTML = loading + "%";
+function showLoadingScreen() {
+    // la barra all'inizio non è visibile
+    loadingBarContainer.style.transform = 'translateX(-100%)';
 
-        let cssNumber = 100 - loading;
+    let LoadingInterval = setInterval(() => {
+        loadingPercentual++;
+        loadingNumberContainer.innerHTML = loadingPercentual + "%";
+
+        let cssNumber = 100 - loadingPercentual;
         loadingBarContainer.style.transform = 'translateX(-' + cssNumber + '%)';
         console.log(loadingBarContainer.style.transform);
-        if (loading == 100) {
+        if (loadingPercentual == 100) {
             clearInterval(LoadingInterval);
             loadingNumberContainer.innerHTML = '100%';
             page1.style.transition = 'all 1s';
@@ -23,5 +29,7 @@ let LoadingInterval = setInterval(() => {
                 console.log('page1 is hidden');
             }, 900);
         }
-    },
-    50);
+    }, 50);
+}
+
+showLoadingScreen();

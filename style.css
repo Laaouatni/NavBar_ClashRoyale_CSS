@@ -43,7 +43,7 @@ body {
 }
 
 .page1 {
-    background: url('./images/main-bg.jpg');
+    background: url('./images/1loading-screen-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -95,16 +95,4 @@ body {
     bottom: calc(var(--height-loading-bar) / 2 - 0.1rem);
     text-shadow: 0 0.2rem 0.1rem black, 0 0 0.5rem black;
     z-index: 1;
-}
-
-.logo-main-page {
-    z-index: 1;
-    position: absolute;
-    top: 5%;
-    height: 10rem;
-}
-
-.center-logo {
-    display: flex;
-    justify-content: center;
 }

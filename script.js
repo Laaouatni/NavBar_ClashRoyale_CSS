@@ -7,7 +7,7 @@ loadingBarContainer.style.transform = 'translateX(-100%)';
 // create a loading that start at 0 and increment by 1 every 1 second until it reaches 100
 let loading = 0;
 let LoadingInterval = setInterval(() => {
-        loading += 1;
+        loading++;
         loadingNumberContainer.innerHTML = loading + "%";
 
         let cssNumber = 100 - loading;

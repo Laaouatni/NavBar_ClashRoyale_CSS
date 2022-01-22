@@ -104,7 +104,7 @@ body {
     z-index: 1;
 }
 
-.invisible {
+.not-visible {
     display: none !important;
 }
 

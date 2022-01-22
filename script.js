@@ -3,20 +3,34 @@ let loadingBarContainer = document.querySelector('.loading-bar');
 // qui devrai mettere il codice per la barra di caricamento (in percentuale)
 let loadingNumberContainer = document.querySelector('.loading-number');
 
-// 0%
-let loadingPercentual = 0;
-
+// 0 pagina della SUPERCELL logo animation
+let page0 = document.querySelector('.page0');
 // 1 pagina della schermata di CARICAMENTO
 let page1 = document.querySelector('.page1');
+let page2 = document.querySelector('.page2');
 
-showLoadingScreen();
+// SUPERCELL logo è visibile, dopo 2 secondi parte la animazione di caricamento.
+if (!page0.classList.contains('not-visible')) {
+    setTimeout(() => {
+        page0.classList.add('not-visible');
+        showLoadingScreen();
+    }, 2000);
+} else {
+    alert('errore');
+}
 
+if (page1.classList.contains('not-visible')) {
+    page2.classList.remove('not-visible');
+}
 
 /* *************************************************************** */
 
 // le funzioni che ci serviranno!
 
 function showLoadingScreen() {
+    // 0%
+    let loadingPercentual = 0;
+
     // la barra all'inizio non è visibile 
     loadingBarContainer.style.transform = 'translateX(-100%)';
 
@@ -49,7 +63,7 @@ function showLoadingScreen() {
 
             // dopo aver completato l'animazione, la pagina 1 diventa invisibile
             setTimeout(() => {
-                page1.classList.add('invisible');
+                page1.classList.add('not-visible');
             }, 900);
         }
     }, 50); // 50ms = 20fps // puoi velocizzare se vuoi

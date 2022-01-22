@@ -2,6 +2,7 @@
     --light-blue: #196dcf;
     --lighter-blue: #7db3f1;
     --height-loading-bar: 1.5rem;
+    --width-supercell: 30vw;
 }
 
 
@@ -105,4 +106,36 @@ body {
 
 .invisible {
     display: none !important;
+}
+
+.page0 {
+    display: grid;
+    place-items: center;
+    background: black;
+    z-index: 5;
+}
+
+.page0 img {
+    width: 30vw;
+    height: auto;
+    /* l'immagine ora è bianca */
+    filter: invert(1);
+    animation: logo-shadow 2s ease-in-out forwards;
+}
+
+@keyframes logo-shadow {
+    0% {
+        filter: invert(1) drop-shadow(0 0 0.5rem white);
+        transform: scale(1);
+    }
+    50% {
+        filter: invert(1) drop-shadow(0 0 calc(var(--width-supercell) / 2) white);
+        transform: scale(1.2);
+    }
+    80% {
+        transform: scale(1);
+    }
+    to {
+        filter: invert(1) drop-shadow(0 0 100vh white);
+    }
 }

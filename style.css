@@ -97,10 +97,6 @@ body {
     z-index: 1;
 }
 
-.visible {
-    display: grid;
-}
-
-.hidden {
-    display: none;
+.invisible {
+    display: none !important;
 }

@@ -9,9 +9,18 @@ let loadingPercentual = 0;
 // 1 pagina della schermata di CARICAMENTO
 let page1 = document.querySelector('.page1');
 
+showLoadingScreen();
+
+
+/* *************************************************************** */
+
+// le funzioni che ci serviranno!
+
 function showLoadingScreen() {
     // la barra all'inizio non è visibile 
     loadingBarContainer.style.transform = 'translateX(-100%)';
+
+    page1.classList.remove('invisible');
 
     // animazione avviene grazie a questo interval
     let LoadingInterval = setInterval(() => {
@@ -40,11 +49,8 @@ function showLoadingScreen() {
 
             // dopo aver completato l'animazione, la pagina 1 diventa invisibile
             setTimeout(() => {
-                page1.style.display = 'none';
-                console.log('page1 is hidden');
+                page1.classList.add('invisible');
             }, 900);
         }
-    }, 50);
+    }, 50); // 50ms = 20fps // puoi velocizzare se vuoi
 }
-
-showLoadingScreen();

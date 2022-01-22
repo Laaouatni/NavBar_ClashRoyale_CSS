@@ -42,14 +42,20 @@ body {
     width: 100vw;
 }
 
+.page {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 .page1 {
     background: url('./images/1loading-screen-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height: 100vh;
-    width: 100vw;
 }
 
 .loading {

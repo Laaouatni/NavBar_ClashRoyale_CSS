@@ -3,11 +3,15 @@ let loadingBarContainer = document.querySelector('.loading-bar');
 // qui devrai mettere il codice per la barra di caricamento (in percentuale)
 let loadingNumberContainer = document.querySelector('.loading-number');
 
+let loadingPercentual;
+
 // 0 pagina della SUPERCELL logo animation
 let page0 = document.querySelector('.page0');
 // 1 pagina della schermata di CARICAMENTO
 let page1 = document.querySelector('.page1');
 let page2 = document.querySelector('.page2');
+
+let audioMenu = new Audio('./audio/menu-sound.ogg');
 
 // dopo 2 secondi inizia la animazione di caricamento se SUPERCELL logo è visibile, 
 if (!page0.classList.contains('not-visible')) {
@@ -19,9 +23,16 @@ if (!page0.classList.contains('not-visible')) {
     alert('errore');
 }
 
-if (page1.classList.contains('not-visible')) {
-    page2.classList.remove('not-visible');
-}
+// after the page1 is loaded show the page 2
+page1.addEventListener('transitionend', () => {
+    console.log('transitionend');
+    if (loadingPercentual >= 100) {
+        page2.classList.remove('not-visible');
+        // make the audio looping forever
+        audioMenu.loop = true;
+        audioMenu.play();
+    }
+});
 
 /* *************************************************************** */
 
@@ -29,7 +40,7 @@ if (page1.classList.contains('not-visible')) {
 
 function showLoadingScreen() {
     // 0%
-    let loadingPercentual = 0;
+    loadingPercentual = 0;
 
     // la barra all'inizio non è visibile 
     loadingBarContainer.style.transform = 'translateX(-100%)';
@@ -39,7 +50,7 @@ function showLoadingScreen() {
     // animazione avviene grazie a questo interval
     let LoadingInterval = setInterval(() => {
         // incrementiamo di 1 il valore della barra di caricamento
-        loadingPercentual += 2;
+        loadingPercentual += 5;
 
         // qui si aggiorna il numero di percentuale
         loadingNumberContainer.innerHTML = loadingPercentual + "%";
@@ -52,7 +63,7 @@ function showLoadingScreen() {
         /* console.log(loadingBarContainer.style.transform); */
 
         // qui si ferma l'interval quando la barra di caricamento è arrivata a 100%
-        if (loadingPercentual >= 100) {
+        if (loadingPercentual == 100) {
             clearInterval(LoadingInterval);
 
             loadingNumberContainer.innerHTML = '100%';

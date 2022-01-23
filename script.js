@@ -23,15 +23,6 @@ if (!page0.classList.contains('not-visible')) {
     alert('errore');
 }
 
-// after the page1 is loaded show the page 2
-page1.addEventListener('transitionend', () => {
-    if (loadingPercentual >= 100) {
-        page2.classList.remove('not-visible');
-        // make the audio looping forever
-        /* audioMenu.loop = true;
-        audioMenu.play(); */
-    }
-});
 
 /* *************************************************************** */
 
@@ -39,6 +30,7 @@ page1.addEventListener('transitionend', () => {
 
 function showLoadingScreen() {
     audioMenu.pause();
+    page2.classList.add('not-visible');
     // 0%
     loadingPercentual = 0;
 
@@ -77,6 +69,7 @@ function showLoadingScreen() {
                 page1.classList.add('not-visible');
                 audioMenu.loop = true;
                 audioMenu.play();
+                page2.classList.remove('not-visible');
             }, 900);
         }
     }, 50); // 50ms = 20fps // puoi velocizzare se vuoi

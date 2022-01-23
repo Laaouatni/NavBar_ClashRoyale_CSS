@@ -139,3 +139,8 @@ body {
         filter: invert(1) drop-shadow(0 0 100vw rgba(255, 255, 255, 0.1));
     }
 }
+
+.page2 nav {
+    padding: 2em;
+    background: rgba(255, 255, 255, 0.116);
+}

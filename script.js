@@ -9,6 +9,7 @@ let loadingPercentual;
 let page0 = document.querySelector('.page0');
 // 1 pagina della schermata di CARICAMENTO
 let page1 = document.querySelector('.page1');
+// 2 pagina della schermata di MENU
 let page2 = document.querySelector('.page2');
 
 let audioMenu = new Audio('./audio/menu-sound.ogg');
@@ -18,9 +19,7 @@ if (!page0.classList.contains('not-visible')) {
     setTimeout(() => {
         page0.classList.add('not-visible');
         showLoadingScreen();
-    }, 2000);
-} else {
-    alert('errore');
+    }, 3000);
 }
 
 
@@ -42,7 +41,7 @@ function showLoadingScreen() {
     // animazione avviene grazie a questo interval
     let LoadingInterval = setInterval(() => {
         // incrementiamo di 1 il valore della barra di caricamento
-        loadingPercentual += 5;
+        loadingPercentual += 1;
 
         // qui si aggiorna il numero di percentuale
         loadingNumberContainer.innerHTML = loadingPercentual + "%";
@@ -55,7 +54,7 @@ function showLoadingScreen() {
         /* console.log(loadingBarContainer.style.transform); */
 
         // qui si ferma l'interval quando la barra di caricamento è arrivata a 100%
-        if (loadingPercentual == 100) {
+        if (loadingPercentual >= 100) {
             clearInterval(LoadingInterval);
 
             loadingNumberContainer.innerHTML = '100%';

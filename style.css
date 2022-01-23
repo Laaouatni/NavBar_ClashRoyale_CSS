@@ -120,7 +120,7 @@ body {
     height: auto;
     /* l'immagine ora è bianca */
     filter: invert(1);
-    animation: logo-shadow 2s ease-in-out forwards;
+    animation: logo-shadow 3s ease-in-out forwards;
 }
 
 @keyframes logo-shadow {

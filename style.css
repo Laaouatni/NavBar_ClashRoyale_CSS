@@ -59,11 +59,23 @@ body {
     background-attachment: fixed;
 }
 
+.loading-container {
+    position: fixed;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+}
+
+.loading-hints {
+    position: fixed;
+    bottom: calc(var(--height-loading-bar) * 2.5);
+    color: white;
+    text-shadow: 0 0.2rem 0.1rem black, 0 0 0.5rem black;
+}
+
 .loading {
     background: black;
     box-shadow: 0 0 0.2rem 0.2rem black;
-    position: fixed;
-    bottom: 0;
     width: 100vw;
     display: grid;
     place-items: center;
@@ -77,12 +89,6 @@ body {
     border-radius: 0.2rem;
     transition: all 0.2s;
 }
-
-
-/* .loading:hover .loading-bar {
-    transition-duration: 2s;
-    transform: translatex(0);
-} */
 
 .loading-bar::before {
     content: '';

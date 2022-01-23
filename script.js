@@ -25,12 +25,11 @@ if (!page0.classList.contains('not-visible')) {
 
 // after the page1 is loaded show the page 2
 page1.addEventListener('transitionend', () => {
-    console.log('transitionend');
     if (loadingPercentual >= 100) {
         page2.classList.remove('not-visible');
         // make the audio looping forever
-        audioMenu.loop = true;
-        audioMenu.play();
+        /* audioMenu.loop = true;
+        audioMenu.play(); */
     }
 });
 
@@ -39,6 +38,7 @@ page1.addEventListener('transitionend', () => {
 // le funzioni che ci serviranno!
 
 function showLoadingScreen() {
+    audioMenu.pause();
     // 0%
     loadingPercentual = 0;
 
@@ -75,6 +75,8 @@ function showLoadingScreen() {
             // dopo aver completato l'animazione, la pagina 1 diventa invisibile
             setTimeout(() => {
                 page1.classList.add('not-visible');
+                audioMenu.loop = true;
+                audioMenu.play();
             }, 900);
         }
     }, 50); // 50ms = 20fps // puoi velocizzare se vuoi

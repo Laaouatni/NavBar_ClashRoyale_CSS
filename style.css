@@ -71,7 +71,7 @@ body {
     bottom: calc(var(--height-loading-bar) * 2.5);
     color: white;
     text-shadow: 0 0.2rem 0.1rem black, 0 0 0.5rem black;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     text-align: center;
     padding: 0 0.5rem;
     letter-spacing: 0.05rem;
@@ -151,6 +151,23 @@ body {
 }
 
 .page2 nav {
-    padding: 2em;
-    background: rgba(255, 255, 255, 0.116);
+    height: 6rem;
+    width: 100vw;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.145);
+    bottom: 0;
+    left: 0;
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+}
+
+.page2 nav img {
+    height: 5rem;
+    width: auto;
+}
+
+.page2 nav img:hover {
+    transition: all 0.2s;
+    transform: scale(1.3);
 }

@@ -2,6 +2,8 @@
 let loadingBarContainer = document.querySelector('.loading-bar');
 // qui devrai mettere il codice per la barra di caricamento (in percentuale)
 let loadingNumberContainer = document.querySelector('.loading-number');
+// hint
+let hintsContainer = document.querySelector('.loading-hints');
 
 let loadingPercentual;
 
@@ -38,10 +40,16 @@ function showLoadingScreen() {
 
     page1.classList.remove('invisible');
 
+    // random hint
+    let HintLength = hintsArray.length;
+    let randomHint = hintsArray[Math.floor(Math.random() * HintLength)];
+
+    hintsContainer.innerHTML = randomHint;
+
     // animazione avviene grazie a questo interval
     let LoadingInterval = setInterval(() => {
         // incrementiamo di 1 il valore della barra di caricamento
-        loadingPercentual += 1;
+        loadingPercentual += 2;
 
         // qui si aggiorna il numero di percentuale
         loadingNumberContainer.innerHTML = loadingPercentual + "%";
@@ -50,7 +58,7 @@ function showLoadingScreen() {
         let cssNumber = 100 - loadingPercentual;
         loadingBarContainer.style.transform = 'translateX(-' + cssNumber + '%)';
 
-        // accendi il console.log per debugging e vedere il valore della barra di caricamento in CSS
+        // TESTING ONLY: il console.log per debugging e vedere il valore della barra di caricamento in CSS
         /* console.log(loadingBarContainer.style.transform); */
 
         // qui si ferma l'interval quando la barra di caricamento è arrivata a 100%
@@ -77,7 +85,7 @@ function showLoadingScreen() {
 
 // ho trovato questi dati in clash royale wiki fandom
 
-let hints = [
+let hintsArray = [
     '10 Elixir is the maximum you can hold.',
     '2v2 Battle allows you to collect chests with a friend, Clanmate or another player - without the risk of losing Trophies!',
     'A Challenge Tournament ends at either 12 wins or 3 losses - whichever comes first.',

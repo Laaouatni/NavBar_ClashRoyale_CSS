@@ -40,7 +40,7 @@ function showLoadingScreen() {
 
     page1.classList.remove('invisible');
 
-    // random hint
+    // random hint (avviene solo una volta all'inzio del loading)
     let HintLength = hintsArray.length;
     let randomHint = hintsArray[Math.floor(Math.random() * HintLength)];
 
@@ -83,7 +83,7 @@ function showLoadingScreen() {
 }
 
 
-// ho trovato questi dati in clash royale wiki fandom
+// ho trovato questi dati in clash royale wiki fandom, poi li ho trasformato in array aggiungendo virgole e ' '
 
 let hintsArray = [
     '10 Elixir is the maximum you can hold.',

@@ -171,12 +171,13 @@ body {
     display: flex;
     align-items: start;
     justify-content: center;
-    border-left: 2px solid var(--glassmophic-white);
+    border-left: 1px solid var(--glassmophic-white);
+    border-right: 1px solid var(--glassmophic-white);
     flex: 1;
 }
 
 .page2 nav img {
-    height: 5rem;
+    height: 4rem;
     width: auto;
     transition: all 0.5s;
 }

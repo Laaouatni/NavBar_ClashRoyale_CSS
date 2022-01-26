@@ -35,11 +35,12 @@ body {
 /* page 1 */
 
 body {
-    background: url("./images/bg-blue-repeated.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: url("./images/bg-blue-repeated.jpg");
+    background-repeat: repeat;
+    background-size: contain;
     background-position: center;
     background-attachment: fixed;
+    ;
     height: 100vh;
     width: 100vw;
 }
@@ -171,6 +172,7 @@ body {
     align-items: start;
     justify-content: center;
     border-left: 2px solid var(--glassmophic-white);
+    flex: 1;
 }
 
 .page2 nav img {

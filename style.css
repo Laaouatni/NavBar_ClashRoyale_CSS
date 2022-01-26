@@ -126,7 +126,7 @@ body {
 }
 
 .page0 img {
-    width: 30vw;
+    width: min(30vw, 100vh);
     height: auto;
     /* l'immagine ora è bianca */
     filter: invert(1);

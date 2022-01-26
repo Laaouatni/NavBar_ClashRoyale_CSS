@@ -71,7 +71,7 @@ body {
     bottom: calc(var(--height-loading-bar) * 2.5);
     color: white;
     text-shadow: 0 0.2rem 0.1rem black, 0 0 0.5rem black;
-    font-size: minmax(0.7rem, 1.5vw);
+    font-size: max(1.5vw, 0.7rem);
     text-align: center;
     padding: 0 0.5rem;
     letter-spacing: 0.05rem;

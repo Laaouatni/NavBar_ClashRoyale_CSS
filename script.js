@@ -14,7 +14,7 @@ let page1 = document.querySelector('.page1');
 // 2 pagina della schermata di MENU
 let page2 = document.querySelector('.page2');
 
-let audioMenu = new Audio('./audio/menu-sound.ogg');
+
 
 // dopo 2 secondi inizia la animazione di caricamento se SUPERCELL logo è visibile, 
 if (!page0.classList.contains('not-visible')) {
@@ -24,6 +24,17 @@ if (!page0.classList.contains('not-visible')) {
     }, 3000);
 }
 
+let audioMenu;
+
+let audio = document.createElement('audio');
+
+if (audio.canPlayType('audio/ogg')) {
+    audioMenu = new Audio('./audio/menu-sound.ogg');
+    console.log('ogg');
+} else {
+    audioMenu = new Audio('./audio/menu-sound.mp3');
+    console.log('mp3');
+}
 
 /* *************************************************************** */
 

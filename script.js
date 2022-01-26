@@ -24,6 +24,7 @@ if (!page0.classList.contains('not-visible')) {
     }, 3000);
 }
 
+// audio, con compatibilità maggiore con i browser
 let audioMenu;
 
 let audio = document.createElement('audio');
@@ -55,7 +56,11 @@ function showLoadingScreen() {
     let HintLength = hintsArray.length;
     let randomHint = hintsArray[Math.floor(Math.random() * HintLength)];
 
-    hintsContainer.innerHTML = randomHint;
+    // se c'è un punto, lo rimuovo con uno <br> in html
+    let randomHintString = randomHint.toString();
+    let randomHintStringWithBr = randomHintString.replace(/\./g, '<br>');
+
+    hintsContainer.innerHTML = randomHintStringWithBr;
 
     // animazione avviene grazie a questo interval
     let LoadingInterval = setInterval(() => {

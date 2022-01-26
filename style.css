@@ -3,6 +3,7 @@
     --lighter-blue: #7db3f1;
     --height-loading-bar: 1.5rem;
     --width-supercell: 30vw;
+    --glassmophic-white: rgba(255, 255, 255, 0.3);
 }
 
 
@@ -157,17 +158,29 @@ body {
     background-color: rgba(255, 255, 255, 0.145);
     bottom: 0;
     left: 0;
-    display: grid;
-    grid-auto-flow: column;
-    place-items: center;
+    display: flex;
+    transition: all 0.5s;
+}
+
+.page2 nav div {
+    height: 100%;
+    width: auto;
+    /* border: 1px solid red; */
+    transition: all 0.5s;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    border-left: 2px solid var(--glassmophic-white);
 }
 
 .page2 nav img {
     height: 5rem;
     width: auto;
+    transition: all 0.5s;
 }
 
-.page2 nav img:hover {
+
+/* .page2 nav img:hover {
     transition: all 0.2s;
     transform: scale(1.3);
-}
+} */

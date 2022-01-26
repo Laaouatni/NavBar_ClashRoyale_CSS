@@ -37,6 +37,20 @@ if (audio.canPlayType('audio/ogg')) {
     console.log('mp3');
 }
 
+
+let navIconsContainer = document.querySelectorAll(".nav-icons");
+
+navIconsContainer.forEach((item, index) => {
+    // on click set the nav to 2fr for the clicker element and he others to 1fr
+    item.addEventListener('click', () => {
+        navIconsContainer.forEach((item, index) => {
+            item.style.flex = '1';
+            item.querySelector('img').style.transform = 'scale(1)';
+        });
+        item.style.flex = '2';
+        item.querySelector('img').style.transform = 'scale(1.3) translateY(-1rem)';
+    });
+});
 /* *************************************************************** */
 
 // le funzioni che ci serviranno!

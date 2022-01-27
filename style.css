@@ -177,8 +177,8 @@ body {
 }
 
 .page2 nav img {
-    height: 4rem;
-    width: auto;
+    height: auto;
+    width: 4rem;
     transition: all 0.5s;
 }
 

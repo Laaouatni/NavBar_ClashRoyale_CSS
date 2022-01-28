@@ -166,6 +166,7 @@ body {
     left: 0;
     display: flex;
     justify-content: center;
+    z-index: 5;
 }
 
 .page2 nav div {
@@ -233,6 +234,34 @@ body {
     position: absolute;
     bottom: 0rem;
     transition-duration: 0.5s;
+}
+
+.page2 main {
+    background: white;
+    height: calc(100vh - var(--nav-height));
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-auto-flow: column;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+}
+
+.page2 main::-webkit-scrollbar {
+    display: none;
+}
+
+.page2 main {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.page2 main section {
+    height: 100%;
+    width: 100vw;
+    scroll-snap-align: center;
 }
 
 @media (max-width: 400px) {

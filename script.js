@@ -39,18 +39,23 @@ if (audio.canPlayType('audio/ogg')) {
     console.log('mp3');
 }
 
-
 let navIconsContainer = document.querySelectorAll(".nav-icons");
 
 navIconsContainer.forEach((item, index) => {
     // on click set the nav to 2fr for the clicker element and he others to 1fr
     item.addEventListener('click', () => {
         navIconsContainer.forEach((item, index) => {
-            item.style.flex = '1';
+            item.style.flex = '1'; // gli altri div sono più piccoli
             item.querySelector('img').style.transform = 'scale(1)';
+            item.querySelector('span').style.opacity = 0;
+            item.querySelector('span').style.bottom = '0rem';
         });
-        item.style.flex = '2';
-        item.querySelector('img').style.transform = 'scale(1.3) translateY(-1rem)';
+        item.style.flex = '2'; // più grande
+        item.querySelector('img').style.transform = 'scale(1.3) translateY(-1.3rem)';
+
+        item.querySelector('span').style.opacity = 1;
+        item.querySelector('span').innerHTML = navIconDescription[index];
+        item.querySelector('span').style.bottom = '0.5rem';
 
         // spostiamo l'indicatore blue dove è stato cliccato
         vw = window.innerWidth / 100;
@@ -135,6 +140,14 @@ function showLoadingScreen() {
     }, 50); // 50ms = 20fps // puoi velocizzare se vuoi
 }
 
+
+let navIconDescription = [
+    'Negozio', //0
+    'Carte', //1
+    'Battaglia', //2
+    'Clan', //3
+    'Eventi' //4
+];
 
 // ho trovato questi dati in clash royale wiki fandom, poi li ho trasformato in array aggiungendo virgole e ' '
 

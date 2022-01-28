@@ -220,6 +220,21 @@ body {
     transition-duration: 0.4s;
 }
 
+.nav-icons {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-icons span {
+    font-size: 0.6rem;
+    color: white;
+    text-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.4), 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    position: absolute;
+    bottom: 0rem;
+    transition-duration: 0.5s;
+}
+
 @media (max-width: 400px) {
     .page2 nav img {
         width: 15vw;

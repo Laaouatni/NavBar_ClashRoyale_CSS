@@ -107,7 +107,10 @@ function showLoadingScreen() {
     // animazione avviene grazie a questo interval
     let LoadingInterval = setInterval(() => {
         // incrementiamo di 1 il valore della barra di caricamento
-        loadingPercentual += 2;
+        if (loadingPercentual < 50) {
+            loadingPercentual += 1;
+        } else { loadingPercentual += 5; }
+
 
         // qui si aggiorna il numero di percentuale
         loadingNumberContainer.innerHTML = loadingPercentual + "%";

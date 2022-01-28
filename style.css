@@ -242,11 +242,11 @@ body {
     width: 100vw;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 300vw;
     display: grid;
     grid-auto-flow: column;
-    scroll-snap-type: x mandatory;
-    overflow-x: scroll;
+    /*     scroll-snap-type: x mandatory;
+    overflow-x: scroll; */
     transition-duration: 0.5s;
 }
 
@@ -262,7 +262,7 @@ body {
 .page2 main section {
     height: 100%;
     width: 100vw;
-    scroll-snap-align: center;
+    /* scroll-snap-align: center; */
     display: flex;
     align-items: center;
     justify-content: center;

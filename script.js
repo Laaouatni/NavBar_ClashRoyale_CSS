@@ -47,12 +47,15 @@ navIconsContainer.forEach((item, index) => {
         navIconsContainer.forEach((item, index) => {
             item.style.flex = '1'; // gli altri div sono più piccoli
             item.querySelector('img').style.transform = 'scale(1)';
+
+            // inizio animazione NON VISIBILE
             item.querySelector('span').style.opacity = 0;
             item.querySelector('span').style.bottom = '0rem';
         });
         item.style.flex = '2'; // più grande
         item.querySelector('img').style.transform = 'scale(1.3) translateY(-1.3rem)';
 
+        // animazione SPAN visibile
         item.querySelector('span').style.opacity = 1;
         item.querySelector('span').innerHTML = navIconDescription[index];
         item.querySelector('span').style.bottom = '0.5rem';
@@ -61,6 +64,8 @@ navIconsContainer.forEach((item, index) => {
         vw = window.innerWidth / 100;
         X_ValueSelect = index * 33.333 / 2 * vw;
         document.querySelector(".bg-select-nav").style.left = X_ValueSelect + "px";
+
+        document.querySelector('.page2 main').style.transform = 'translateX(' + (-index * 100) + 'vw)';
 
         // quando qualcuno fa il resize, la navbar si riadatta.
         window.addEventListener('resize', () => {

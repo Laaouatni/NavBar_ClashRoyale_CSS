@@ -14,8 +14,8 @@ let page1 = document.querySelector('.page1');
 // 2 pagina della schermata di MENU
 let page2 = document.querySelector('.page2');
 
-// create vw unit
 let vw = window.innerWidth / 100;
+
 
 
 
@@ -52,12 +52,16 @@ navIconsContainer.forEach((item, index) => {
         });
         item.style.flex = '2';
         item.querySelector('img').style.transform = 'scale(1.3) translateY(-1rem)';
-
+        vw = window.innerWidth / 100;
         let X_ValueSelect = index * 33 / 2 * vw;
         document.querySelector(".bg-select-nav").style.left = X_ValueSelect + "px";
     });
 });
-/* *************************************************************** */
+
+window.addEventListener('resize', () => {
+        vw = window.innerWidth / 100;
+    })
+    /* *************************************************************** */
 
 // le funzioni che ci serviranno!
 

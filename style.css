@@ -217,6 +217,7 @@ body {
     left: 33.333vw;
     z-index: -1;
     border: none;
+    transition-duration: 0.4s;
 }
 
 @media (max-width: 400px) {

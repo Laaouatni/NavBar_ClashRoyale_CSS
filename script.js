@@ -7,6 +7,8 @@ let hintsContainer = document.querySelector('.loading-hints');
 
 let loadingPercentual;
 
+let X_ValueSelect;
+
 // 0 pagina della SUPERCELL logo animation
 let page0 = document.querySelector('.page0');
 // 1 pagina della schermata di CARICAMENTO
@@ -15,6 +17,7 @@ let page1 = document.querySelector('.page1');
 let page2 = document.querySelector('.page2');
 
 let vw = window.innerWidth / 100;
+
 
 
 
@@ -53,15 +56,19 @@ navIconsContainer.forEach((item, index) => {
         item.style.flex = '2';
         item.querySelector('img').style.transform = 'scale(1.3) translateY(-1rem)';
         vw = window.innerWidth / 100;
-        let X_ValueSelect = index * 33.333 / 2 * vw;
+        X_ValueSelect = index * 33.333 / 2 * vw;
         document.querySelector(".bg-select-nav").style.left = X_ValueSelect + "px";
+
+        // quando qualcuno fa il resize, la navbar si riadatta.
+        window.addEventListener('resize', () => {
+            vw = window.innerWidth / 100;
+            X_ValueSelect = index * 33.333 / 2 * vw;
+            document.querySelector(".bg-select-nav").style.left = X_ValueSelect + "px";
+        });
     });
 });
 
-window.addEventListener('resize', () => {
-    vw = window.innerWidth / 100;
-    document.querySelector(".bg-select-nav").style.left = X_ValueSelect + "px";
-});
+
 /* *************************************************************** */
 
 // le funzioni che ci serviranno!
@@ -83,7 +90,8 @@ function showLoadingScreen() {
 
     // se c'è un punto, lo rimuovo con uno <br> in html
     let randomHintString = randomHint.toString();
-    let randomHintStringWithBr = randomHintString.replace(/\./g, '<br>');
+    // add <br> after all dots
+    let randomHintStringWithBr = randomHintString.replace(/\./g, '. <br>');
 
     hintsContainer.innerHTML = randomHintStringWithBr;
 

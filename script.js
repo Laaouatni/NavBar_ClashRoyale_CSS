@@ -18,10 +18,6 @@ let page2 = document.querySelector('.page2');
 
 let vw = window.innerWidth / 100;
 
-
-
-
-
 // dopo 2 secondi inizia la animazione di caricamento se SUPERCELL logo è visibile, 
 if (!page0.classList.contains('not-visible')) {
     setTimeout(() => {
@@ -55,6 +51,8 @@ navIconsContainer.forEach((item, index) => {
         });
         item.style.flex = '2';
         item.querySelector('img').style.transform = 'scale(1.3) translateY(-1rem)';
+
+        // spostiamo l'indicatore blue dove è stato cliccato
         vw = window.innerWidth / 100;
         X_ValueSelect = index * 33.333 / 2 * vw;
         document.querySelector(".bg-select-nav").style.left = X_ValueSelect + "px";
@@ -91,7 +89,13 @@ function showLoadingScreen() {
     // se c'è un punto, lo rimuovo con uno <br> in html
     let randomHintString = randomHint.toString();
     // add <br> after all dots
-    let randomHintStringWithBr = randomHintString.replace(/\./g, '. <br>');
+    let randomHintStringWithBr;
+
+    if (randomHintString.includes('...')) {
+        randomHintStringWithBr = randomHintString;
+    } else {
+        randomHintStringWithBr = randomHintString.replace(/\./g, '. <br>');
+    }
 
     hintsContainer.innerHTML = randomHintStringWithBr;
 

@@ -212,8 +212,9 @@ body {
     position: fixed;
     background: linear-gradient(to bottom, var(--first-selected-nav-blue), var(--second-selected-nav-blue));
     height: var(--nav-height);
-    width: 33vw;
+    width: 33.333vw;
     bottom: 0;
+    left: 33.333vw;
     z-index: -1;
     border: none;
 }
@@ -221,8 +222,5 @@ body {
 @media (max-width: 400px) {
     .page2 nav img {
         width: 15vw;
-    }
-    .page2 nav {
-        height: 20vw;
     }
 }

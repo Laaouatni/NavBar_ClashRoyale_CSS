@@ -53,15 +53,16 @@ navIconsContainer.forEach((item, index) => {
         item.style.flex = '2';
         item.querySelector('img').style.transform = 'scale(1.3) translateY(-1rem)';
         vw = window.innerWidth / 100;
-        let X_ValueSelect = index * 33 / 2 * vw;
+        let X_ValueSelect = index * 33.333 / 2 * vw;
         document.querySelector(".bg-select-nav").style.left = X_ValueSelect + "px";
     });
 });
 
 window.addEventListener('resize', () => {
-        vw = window.innerWidth / 100;
-    })
-    /* *************************************************************** */
+    vw = window.innerWidth / 100;
+    document.querySelector(".bg-select-nav").style.left = X_ValueSelect + "px";
+});
+/* *************************************************************** */
 
 // le funzioni che ci serviranno!
 

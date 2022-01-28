@@ -243,12 +243,9 @@ body {
     width: 100vw;
     position: fixed;
     top: 0;
-    right: 0;
-    padding: 0 200vw;
+    right: 200vw;
     display: grid;
     grid-auto-flow: column;
-    scroll-snap-type: x mandatory;
-    overflow: scroll;
     transition-duration: 0.5s;
 }
 
@@ -264,7 +261,6 @@ body {
 .page2 main section {
     height: 100%;
     width: 100vw;
-    scroll-snap-align: center;
     display: flex;
     align-items: center;
     justify-content: center;

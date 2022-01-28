@@ -65,7 +65,7 @@ navIconsContainer.forEach((item, index) => {
         X_ValueSelect = index * 33.333 / 2 * vw;
         document.querySelector(".bg-select-nav").style.left = X_ValueSelect + "px";
 
-        document.querySelector('.page2 main').style.padding = 0 + " " + index * 100 + 'vw';
+        document.querySelector('.page2 main').style.right = index * 100 + 'vw';
 
         // quando qualcuno fa il resize, la navbar si riadatta.
         window.addEventListener('resize', () => {

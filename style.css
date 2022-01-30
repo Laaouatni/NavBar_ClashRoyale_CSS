@@ -267,7 +267,7 @@ body {
     justify-content: center;
 }
 
-.ceste-regalo-container {
+.baule-regalo-container {
     width: 100vw;
     gap: 0.5rem;
     min-height: calc(var(--nav-height) * 2.5);
@@ -277,23 +277,23 @@ body {
     box-sizing: border-box;
 }
 
-.ceste-regalo-container {
+.baule-regalo-container {
     display: flex;
 }
 
-.ceste-regalo-container div {
+.baule-regalo-container div {
     border: 2px solid white;
     background-color: var(--glassmophic-white);
     border-radius: 0.5rem;
 }
 
-.ceste-card {
+.baule-card {
     position: relative;
     flex: 1;
     overflow: hidden;
 }
 
-.arena-ceste-container {
+.arena-baule-container {
     display: flex;
     justify-content: center;
     position: absolute;

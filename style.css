@@ -337,16 +337,27 @@ body {
     place-items: center;
     font-size: 1.3rem;
     font-family: 'Supercell-Magic';
-    text-shadow: 0 0.2rem 0.1rem black, 0 0 0.5rem rgba(0, 0, 0, 0.2);
+    text-shadow: 0 0 2em white;
     transition: all 0.5s;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-battaglia {
     background-color: var(--second-orange);
 }
 
+.btn-battaglia:hover {
+    filter: drop-shadow(0 0 1rem var(--second-orange));
+}
+
 .btn-party {
     background-color: var(--first-btn-blue);
+    border: 1px solid red;
+}
+
+.btn-party:hover {
+    filter: drop-shadow(0 0 1rem var(--first-btn-blue));
 }
 
 .battaglia-container button:active {

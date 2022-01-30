@@ -135,6 +135,7 @@ body {
 
 .page0 img {
     width: min(30vw, 100vh);
+    max-width: 300px;
     height: auto;
     /* l'immagine ora è bianca */
     filter: invert(1);
@@ -262,12 +263,48 @@ body {
     height: 100%;
     width: 100vw;
     display: flex;
-    align-items: center;
+    position: relative;
     justify-content: center;
 }
 
-@media (max-width: 400px) {
+.ceste-regalo-container {
+    width: 100vw;
+    gap: 0.5rem;
+    min-height: calc(var(--nav-height) * 2.5);
+    padding: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+}
+
+.ceste-regalo-container {
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.ceste-regalo-container div {
+    border: 2px solid white;
+    background-color: var(--glassmophic-white);
+    border-radius: 0.5rem;
+}
+
+.ceste-card {
+    position: relative;
+}
+
+.arena-ceste-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translatex(-50%);
+    font-size: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+
+/* @media (max-width: 400px) {
     .page2 nav img {
         width: 15vw;
     }
-}
+} */

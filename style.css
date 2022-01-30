@@ -335,7 +335,7 @@ body {
     display: grid;
     border-radius: 0.5rem;
     place-items: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-family: 'Supercell-Magic';
     text-shadow: 0 0.2rem 0.1rem black, 0 0 0.5rem rgba(0, 0, 0, 0.2);
     transition: all 0.5s;

@@ -9,6 +9,11 @@
     --first-selected-nav-blue: #47698b;
     --second-selected-nav-blue: #5b88ab;
     --nav-height: 5rem;
+    --baule-height: calc(var(--nav-height) * 2.5);
+    --first-orange: #ffbb00;
+    --second-orange: #ffa401;
+    --first-btn-blue: #00affe;
+    --second-btn-blue: #0657a8;
 }
 
 
@@ -270,7 +275,7 @@ body {
 .baule-regalo-container {
     width: 100vw;
     gap: 0.5rem;
-    min-height: calc(var(--nav-height) * 2.5);
+    min-height: var(--baule-height);
     padding: 0.5rem;
     position: absolute;
     bottom: 0;
@@ -312,6 +317,43 @@ body {
     justify-content: center;
     align-items: center;
     text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4), 0 0.5rem 1rem rgba(0, 0, 0, 1);
+}
+
+.battaglia-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: column;
+    gap: 0.4rem;
+    position: fixed;
+    bottom: calc(var(--nav-height) + var(--baule-height));
+    width: 100%;
+    padding: 0 5rem;
+    box-sizing: border-box;
+    margin: 0 0 0.5em 0
+}
+
+.battaglia-container button {
+    color: white;
+    height: 6rem;
+    display: grid;
+    border-radius: 0.5rem;
+    place-items: center;
+    font-size: 1.5rem;
+    font-family: 'Supercell-Magic';
+    text-shadow: 0 0.2rem 0.1rem black, 0 0 0.5rem rgba(0, 0, 0, 0.2);
+    transition: all 0.5s;
+}
+
+.btn-battaglia {
+    background-color: var(--second-orange);
+}
+
+.btn-party {
+    background-color: var(--first-btn-blue);
+}
+
+.battaglia-container button:active {
+    transform: scale(0.9);
 }
 
 
